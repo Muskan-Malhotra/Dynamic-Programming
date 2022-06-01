@@ -1,5 +1,17 @@
 import java.io.*;
 
+/**
+ * In fibonacci
+ * Memoization approach stores the ans of the questions whose value have already been calculated
+ * A question bank qb[n+1](cox need to store values till n) is captured.
+ * then check is qb[n] !=0 then return
+ * else call the function fiboMem
+ * save in qb[n] - fibn for next iteration and return fibn
+ * Time: O(n) 
+ * W/o qb Time: O(2^n exponential time)
+ * Space: O(n)  
+ */
+
 
 class Fibonacci{
   public static void main(String[] args) throws IOException{
