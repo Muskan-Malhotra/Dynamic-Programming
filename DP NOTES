@@ -1,0 +1,11 @@
+For Memoization mostly 2 steps are required
+: Add the ans in question bank
+: Check if the value persists in qb then return
+
+For Tabulation the iteration method is used
+: Step1 : Storage and assign meaning to the cell
+: Step2 : Identify direction of problem:
+          : where is bigger and smaller problem
+          : Solve problem from smaller to bigger one
+: Step3 : Travel and solve
+
