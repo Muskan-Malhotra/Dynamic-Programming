@@ -17,7 +17,7 @@ class Fibonacci{
     if(n == 0 || n == 1){
       return n;
     }
-
+    //can try Sys.ln("Hello" + n);
     int fibn = fibo(n-1)+fibo(n-2);
 
     return fibn;
@@ -32,8 +32,14 @@ class Fibonacci{
       return qb[n];
     }
     
-    count += 1;
-    int fibn = fibo(n-1)+fibo(n-2);
+
+    //reduces the number of time the call have been made
+    System.out.println("Hello: "+n);
+
+    int fibn1 = fiboMem(n-1,qb);
+    int fibn2 = fiboMem(n-2,qb);
+    int fibn = fibn1 + fibn2;
+
     qb[n] = fibn;
 
     return fibn;
