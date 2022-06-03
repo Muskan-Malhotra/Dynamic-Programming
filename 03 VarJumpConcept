@@ -1,0 +1,74 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] ar = new int[n];
+        for(int i=0;i<n;i++){
+            ar[i] = scn.nextInt();
+        }
+        
+        int ans = varJumps(ar,0, n);
+        System.out.println(ans);
+    }
+    
+    // public static int count = 0;
+    
+    public static int varJumps(int[] ar, int idx, int n){
+        
+        if(idx == n){
+            return 1;
+        }
+        if(idx>n){
+            return 0;
+        }
+        
+        int count = 0;
+        
+        for(int jump=1;jump<=ar[idx];jump++){
+            if(jump+idx<=n){
+                // System.out.println("Count: "+count);
+                count += varJumps(ar,idx+jump,n);
+                // System.out.println("Count: "+count+" Index: "+jump);
+            }
+            else{
+                // System.out.println("Count: "+count+" "+jump);
+                break;
+            }
+        }
+        
+        return count;
+    }
+    
+    // Count: 0
+// Count: 0
+// Count: 0 Index: 1
+// Count: 0
+// Count: 0
+// Count: 1 Index: 1
+// Count: 1
+// Count: 1 Index: 2
+// Count: 1
+// Count: 2 Index: 3
+// Count: 2 Index: 1
+// Count: 2
+// Count: 4 Index: 2
+// Count: 4
+// Count: 4
+// Count: 5 Index: 1
+// Count: 5
+// Count: 9 Index: 3
+// 9
+    
+    
+
+    
+    
+    
+    
+
+}

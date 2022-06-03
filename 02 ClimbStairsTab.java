@@ -41,3 +41,8 @@ class ClimbStairsTab{
 
 
 }
+
+/**
+ * 4--> input
+ * 7--> number of paths
+ */
