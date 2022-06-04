@@ -15,7 +15,7 @@ class VarJump {
   }
   // static int count = 0;
 
-  //path is curated when the index goes to n+1. That path is counted
+  //path is curated when the index goes to n+1. That path till n is counted
   public static int countPaths(int[] ar, int idx, int n, String psf){
 
     if(idx == n){

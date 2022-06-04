@@ -9,3 +9,19 @@ For Tabulation the iteration method is used
           : Solve problem from smaller to bigger one
 : Step3 : Travel and solve
 
+
+public static int MazePath(int[][] ar, int i, int j,int ans){
+  : in a function like this:
+  the ans returned from base case is always 0 coz base case is looking at initial value of the ans so called.
+  //Look at Min cost path for this!! when we return ans as the base case and not the element of ar[n-1][n-1]
+
+
+Important programs to look at in this to build insight:
+MinMoves.java
+MinCostPath.java
+VarJumpTab.java
+ClimbStairsTab.java(study in descending order)
+
+
+
+
