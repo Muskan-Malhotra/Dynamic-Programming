@@ -1,10 +1,7 @@
+
 import java.util.*;
 
-/**
- * 
- */
-
-class MinMoves {
+class MinMovesMem {
 
     public static void main(String[] args) throws Exception {
         // write your code here
@@ -15,32 +12,35 @@ class MinMoves {
           arr[i] = scn.nextInt();
         }
         
-        int paths = MinMovesRec(arr,0,n);
+        int paths = MinMovesMemo(arr,0,n, new int[n+1]);
         System.out.println(paths);
         scn.close();
     }
     
     
     
-    public static int MinMovesRec(int[] arr, int idx, int n){
-
-      //variable inside function so every level has its own fresh variable
+    public static int MinMovesMemo(int[] arr, int idx, int n,int[] qb){
        int min = Integer.MAX_VALUE; 
+       
+       
        
         if(idx == n){
             return 0;
         }
         
-        // int moves = 0;
+        if(qb[idx] != 0){
+            return qb[idx];
+        }
+        
+        int count = 0;
         for(int jump=1;jump<=arr[idx] && jump+idx<=n;jump++){
             
             if(jump+idx <= n){
-                int moves = MinMovesRec(arr,idx+jump,n);
-                // moves += MinMoves(arr,idx+jump,n);
-                //moves should not be added coz at parent node we are not adding but finding the minimum of the chidlrens.
-                
-                if(moves<min){
-                    min = moves;
+                System.out.println("Hello: "+idx);
+                count = MinMovesMemo(arr,idx+jump,n,qb);
+                // System.out.println("COunt: "+ count);
+                if(count<min){
+                    min = count;
                     // System.out.println("Min: "+ min);
                 }
             }
@@ -49,17 +49,39 @@ class MinMoves {
         
        
         
-        // int ans = Math.min(moves,min);
+        // int ans = Math.min(count,min);
         if(min == Integer.MAX_VALUE){
-            // qb[idx] = min;
-            // min = 0; is wrong as the min value should refresh to infinety
+            qb[idx] = min;
             return min;
         }
          
         
-        return min+1;
+        int ans = min+1;
+        qb[idx] = ans;
+        
+        return ans;
     }
     
     
 
 }
+
+/**
+ * input
+ * 10
+3
+3
+0
+2
+1
+2
+4
+2
+0
+0
+ */
+
+ /**
+  * ouptut
+  4
+  */
