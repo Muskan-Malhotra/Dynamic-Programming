@@ -34,6 +34,14 @@ class MinMovesTab{
     public static int MinMovestab(int[] arr,int n){
       
       int dp[] = new int[n+1];
+      //Meaning+storage
+      //dp[i] meaning i to n minimum moves
+      
+      //Direction
+      // Smallest problem at the end of the array i.e 8 to 8 min moves = 0
+
+      //Travel and Solve
+
       dp[n]=0;
       
       for(int i=n-1;i>=0;i--){
