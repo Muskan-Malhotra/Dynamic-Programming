@@ -25,6 +25,7 @@ class VarJump {
     for(int jump = 1; jump <= ar[idx]; jump++){
       if((jump+idx)<n){
         count += countPaths(ar, idx+jump, n, psf+idx);
+        //in this if count is added in the recursion call then count will change every 0 value of count while pre order and in post order will add the post order sum .. every time a post order count is encountered it will change count of the parent will travel to children changing their count and in post again change the parent count!!
       }
       else{
         break; // if the jump is outside the array then break from loop for that index

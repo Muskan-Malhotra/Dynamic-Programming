@@ -62,6 +62,8 @@ class  Goldmine{
         
         //  System.out.println(ans+"_"+i); 
         ans = ar[i][j]+Math.max(gold1,Math.max(gold2,gold3));
+
+        //even if ans += ... then also same ans coz everywhere the ans will be marked 0 for every tree like traversal
         
         // System.out.println(ans+"_"+i);
         
