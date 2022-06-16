@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-class  Goldmine{
+class goldMine {
 
     public static void main(String[] args) throws Exception {
         // write your code here
@@ -17,14 +17,15 @@ class  Goldmine{
             }
         }
         
-        int fans = Integer.MIN_VALUE;
+        int fans = 0;
         
-        // int[][] qb = new int[n+1][m+1];
+        int[][] qb = new int[n+1][m+1];
         for(int i=0;i<ar.length;i++){
             
-            int ans = goldMine(ar,i,0,0);
             
-            System.out.println(ans);
+            int ans = goldM(ar,i,0,qb);
+            
+            // System.out.println(ans);
             
             if(ans>fans){
                 fans = ans;
@@ -35,37 +36,38 @@ class  Goldmine{
         scn.close();
     }
     
-    public static int goldMine(int[][] ar, int i, int j, int ans){
+    public static int goldM(int[][] ar, int i, int j, int[][] qb){
         
-        if(j==ar.length-1){
-            // System.out.println(i+"-"+(j));
-            return ar[i][j];
+        
+        int gold1 = 0;
+        int gold2 = 0;
+        int gold3 = 0;
+        
+        if(qb[i][j] != 0){
+            return qb[i][j];
         }
         
-        int gold1 = Integer.MIN_VALUE;
-        int gold2 = Integer.MIN_VALUE;
-        int gold3 = Integer.MIN_VALUE;
         
-        
-        if(i-1>=0){
+        if(i-1>=0 && j+1<ar[0].length){
             
-            gold1 = goldMine(ar,i-1,j+1,ans);
+            gold1 = goldM(ar,i-1,j+1,qb);
         }
-        if(j+1<ar[0].length){
+        if(i+1<ar.length && j+1<ar[0].length ){
             
-            gold2 = goldMine(ar,i,j+1,ans);
+            gold2 = goldM(ar,i,j+1,qb);
         } 
         if(i+1<ar.length && j+1<ar[0].length){
             
-            gold3 = goldMine(ar,i+1,j+1,ans);
+            gold3 = goldM(ar,i+1,j+1,qb);
         } 
         
         //  System.out.println(ans+"_"+i); 
-        ans = ar[i][j]+Math.max(gold1,Math.max(gold2,gold3));
-
-        //even if ans += ... then also same ans coz everywhere the ans will be marked 0 for every tree like traversal
+        int ans = ar[i][j]+Math.max(gold1,Math.max(gold2,gold3));
         
         // System.out.println(ans+"_"+i);
+        qb[i][j] = ans;
+        
+        // System.out.println(ans+"_"+i+"-"+j);
         
         return ans;
     }
