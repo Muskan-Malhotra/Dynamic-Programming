@@ -1,6 +1,20 @@
 
 import java.util.*;
 
+/**
+ * Time Complexity :
+O(n2)
+
+This time complexity is quadratic because nested loops are used.
+
+SPACE COMPLEXITY :
+O(n2)
+
+Since we use a 2D array for Dynamic Programming, therefore the space used is of complexity n2.
+
+We encourage you to watch the video "Minimum Cost Path" for a clearer explanation of this problem.
+ */
+
 
 class MinCostPathTab {
 
