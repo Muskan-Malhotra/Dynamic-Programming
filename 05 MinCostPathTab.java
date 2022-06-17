@@ -40,6 +40,8 @@ class MinCostPathTab {
         
         int ans = MazePath(ar);
         System.out.println(ans);
+
+        scn.close();
     }
     
     public static int MazePath(int[][] ar){

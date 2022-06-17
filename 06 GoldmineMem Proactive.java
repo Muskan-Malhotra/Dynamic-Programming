@@ -1,7 +1,6 @@
-
 import java.util.*;
 
-class goldMine {
+class GoldmineMem {
 
     public static void main(String[] args) throws Exception {
         // write your code here
@@ -37,9 +36,12 @@ class goldMine {
     }
     
     public static int goldM(int[][] ar, int i, int j, int[][] qb){
+
+
+        //base case is not required coz at the last column the ans is returned to main. and at last column it stops on its own!
         
         
-        int gold1 = 0;
+        int gold1 = 0;   //0 is important not - infinity coz at ar[n-1][m-1] the golds amount will be -infinity and adding the last index to it, gives -infinity.
         int gold2 = 0;
         int gold3 = 0;
         
