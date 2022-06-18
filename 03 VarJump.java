@@ -127,8 +127,10 @@ public class Main {
  */
 
 
- /**
+ /**2.222222222222222
   * Jab global count jo function mein paas hoga toh wo apni value pre time pe hi change kar dega!!!
+  Ismein yeh global variable ki tarah kaam kar raha hai!!
+
   public static int varJumps(int[] ar, int idx, int n,int count){
         
         if(idx == n){

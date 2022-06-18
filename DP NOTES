@@ -28,6 +28,16 @@ MOST MOST MOST Important
 1) jab recursion mein on the way up hai toh peeche waale ka ans next line mein add hoga..naaki ussi line mein
 
 2)jab bhi count += rec(call) and count is defined as int count = 0; within the recursive function;
-toh har node ki return hoke value parent ke count ko change karegi and then baaki ki nodes add hongi
+toh har node ki return hoke value parent ke count ko change karegi and then baaki ki nodes add hongiz
+
+
+1.1) Recursion ke ans ko store karne ke liye variable alag se banao
+1.2) Recursive function ka variable next line mein ans deta hai..uss line pe same hi rehta hai
+1.3) Agar koi variable recursive function mein bana hai toh wo har baar refresh hoga har iteration ke liye
+eg int ans =0
+
+ans = rec(call)
+toh last tak same rahega jab tak ismein kuch return nahi ho jata yah last recursion ka ans nhi a ajata
+1.4)Check for varaible jump 2.2222222222222 agar global variable ka dekhna hai toh jo har pre ke tym count ko change akr deta hai den usmein values add karta hai!!
 
 
