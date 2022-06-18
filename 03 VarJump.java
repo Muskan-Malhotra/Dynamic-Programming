@@ -41,3 +41,156 @@ class VarJump {
 }
 
 
+
+
+/**
+ * CORRECT VERSION
+ * import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] ar = new int[n];
+        for(int i=0;i<n;i++){
+            ar[i] = scn.nextInt();
+        }
+        
+        int ans = varJumps(ar,0, n);
+        System.out.println(ans);
+    }
+    
+    // public static int count = 0;
+    
+    public static int varJumps(int[] ar, int idx, int n){
+        
+        if(idx == n){
+            return 1;
+        }
+        if(idx>n){
+            return 0;
+        }
+        
+        int count = 0;
+        
+        for(int jump=1;jump<=ar[idx];jump++){
+            if(jump+idx<=n){
+                // System.out.println("Count: "+count);
+                count += varJumps(ar,idx+jump,n);
+                // System.out.println("Count: "+count+" Index: "+jump);
+            }
+            else{
+                // System.out.println("Count: "+count+" "+jump);
+                break;
+            }
+        }
+        
+        return count;
+    }
+
+    INPUT 4
+    3 2 2 1
+    OUTPUT 
+    6
+    
+    // Count: 0
+// Count: 0
+// Count: 0 Index: 1
+// Count: 0
+// Count: 0
+// Count: 1 Index: 1
+// Count: 1
+// Count: 1 Index: 2
+// Count: 1
+// Count: 2 Index: 3
+// Count: 2 Index: 1
+// Count: 2
+// Count: 4 Index: 2
+// Count: 4
+// Count: 4
+// Count: 5 Index: 1
+// Count: 5
+// Count: 9 Index: 3
+// 9
+    
+    
+
+    
+    
+    
+    
+
+}
+ */
+
+
+ /**
+  * Jab global count jo function mein paas hoga toh wo apni value pre time pe hi change kar dega!!!
+  public static int varJumps(int[] ar, int idx, int n,int count){
+        
+        if(idx == n){
+            return 1;
+        }
+        if(idx>n){
+            return 0;
+        }
+        
+       
+        
+        for(int jump=1;jump<=ar[idx];jump++){
+            if(jump+idx<=n){
+                // System.out.println("Count: "+count);
+                count += varJumps(ar,idx+jump,n,count);
+                // System.out.println("Count: "+count+" Index: "+jump);
+            }
+            else{
+                // System.out.println("Count: "+count+" "+jump);
+                break;
+            }
+        }
+        
+        return count;
+    }
+
+    input 3
+    322
+    output 6
+  */
+
+
+
+  /**
+   * WHEN THE FUNCTION IS LIKE THIS
+   * COUNT KI VALUE WAY UP MEIN CHANGE HI NAHI HUI REMAINS 0 COZ ANS = 0; C=A = 0
+   * ANS NE SAME RULE FOLLOW LIYA AS A SIMPLE RECUSRION WITHOUT EXTRA COUNT VARIABLE IN CALL
+   * 
+   * count ke na hone se bhi will be getting the same ans
+   * public static int varJumps(int[] ar, int idx, int n,int count){
+        
+        if(idx == n){
+            return 1;
+        }
+        if(idx>n){
+            return 0;
+        }
+        
+       int ans = 0;
+        
+        for(int jump=1;jump<=ar[idx];jump++){
+            if(jump+idx<=n){
+                // System.out.println("Count: "+count);
+                ans += varJumps(ar,idx+jump,n,count+ans);
+                System.out.println("ans: "+ans+"Count: "+count+" Index: "+jump);
+            }
+            else{
+                // System.out.println("Count: "+count+" "+jump);
+                break;
+            }
+        }
+        
+        return ans;
+    }
+   */

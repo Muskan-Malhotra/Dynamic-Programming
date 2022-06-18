@@ -24,4 +24,10 @@ ClimbStairsTab.java(study in descending order)
 
 
 
+MOST MOST MOST Important
+1) jab recursion mein on the way up hai toh peeche waale ka ans next line mein add hoga..naaki ussi line mein
+
+2)jab bhi count += rec(call) and count is defined as int count = 0; within the recursive function;
+toh har node ki return hoke value parent ke count ko change karegi and then baaki ki nodes add hongi
+
 
