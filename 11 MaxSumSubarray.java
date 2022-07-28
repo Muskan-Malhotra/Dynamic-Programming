@@ -15,7 +15,7 @@ class MaxSumSubarray {
             if(curSum<0){
                 curSum = 0;
             }
-            maxSum = Math.max(curSum,maxSum);
+            maxSum = Math.max(curSum,maxSum);//will work for negatives as well
         }
         
         return maxSum;
