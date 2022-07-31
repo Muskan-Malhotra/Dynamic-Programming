@@ -39,3 +39,8 @@ class SubsetSum{
       return dp[N][sum];
   }
 }
+
+/**
+ * Input: set[] = {3, 34, 4, 12, 5, 2}, sum = 9
+Output: True  
+ */
