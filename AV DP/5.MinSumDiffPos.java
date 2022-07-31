@@ -1,9 +1,13 @@
 /**
-* Expected Time Complexity: O(N*|sum of array elements|)
+Sum package AV DP;
+
+public class 5.MinSumDiffPos {
+  
+}* Expected Time Complexity: O(N*|sum of array elements|)
 *  Expected Auxiliary Space: O(N*|sum of array elements|)
  */
-
-class Solution
+import java.util.*;
+class MinimumSumDiffernce
 {
 
 	public int minDifference(int nums[], int n) 
@@ -103,5 +107,4 @@ Output: 3
 Explanation: 
 Subset1 = {1}, sum of Subset1 = 1
 Subset2 = {4}, sum of Subset2 = 4
-
- */
+*/
