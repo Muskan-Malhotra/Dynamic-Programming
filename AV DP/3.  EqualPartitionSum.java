@@ -35,7 +35,7 @@ class EqualSUmPartition {
                   dp[i][j] = false;
               }
               else if(j==0){
-                  dp[i][j] = false;
+                  dp[i][j] = true;
               }
               else{
                  if(arr[i-1]<=j){
